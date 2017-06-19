@@ -1,0 +1,3 @@
+# <name> <iv> <hp> <power up cost (in 100s)> <overall appraisal> <highest stat appraisal> <highest stat type> <hatched/powered>
+zubat 57 24 4 3 hd 2
+
