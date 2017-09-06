@@ -1,26 +1,19 @@
-#!/usr/bin/env python
 ######################################################
 #
-#    iv.py
+#    pkgo_appraise.py
 #
-#  Calculate IVs
-#
-#  Usage: iv.py <input.txt> <directory with Pokemon Go data files>
+#  Libraries for handling Pokemon Go appraisals.
 #
 ######################################################
 
-import os
-import sys
-import optparse
 import math
-import json
 
-import yaml
+import pkgo_data
+import pkgo_pkmn
 
-# pkmn has:
-# hp, cp, IVs, species, base stats, definite level
-# appraisal has:
-# hp, cp, species, base stats, level range, hmin/max, imin, gmin/max
+
+# appraisal objects have the following fields:
+# hp, cp, species, base stats, level range, hmin/max (highest IV min/max), imin (IV minimum), gmin/max (total IV min/max)
 
 # Appraisal numbers (overall):
 #  0-22 "not likely to make headway"
@@ -35,22 +28,6 @@ gappToMin = [0, 23, 30, 37, 46]
 #    15 "exceeds my calculations"
 happToMin = [0, 8, 13, 15, 16]
 
-# Max IV is 15
-maxIV = 15
-
-# Calculate CP
-def calcCP(sta, atk, defe, lvl):
-    cpm = levelToCpm[str(lvl)]
-    return int(max(10, math.floor(atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10)))
-
-# Calculate HP
-def calcHP(sta, lvl):
-    cpm = levelToCpm[str(lvl)]
-    return int(max(10, math.floor(cpm * sta)))
-
-def PKMNToStr(pk):
-    ivsum = pk['ivsta'] + pk['ivatk'] + pk['ivdef']
-    return "Level {0}, IVs {1:2}, {2:2}, {3:2}, total {4:2} ({5:.1%}) ({1:x}{2:x}{3:x})".format(pk['level'], pk['ivsta'], pk['ivatk'], pk['ivdef'], ivsum, ivsum / 45.0)
 
 # Sanity check that chosen IVs fit the appraisal
 def checkIVsFitAppr(appr, ivsta, ivatk, ivdef):
@@ -86,29 +63,28 @@ def checkIVsFitAppr(appr, ivsta, ivatk, ivdef):
 
 # Match IV values for an appraisal,
 # and return an array of possible Pokemon
-def matchApprIVs(appr, baseStats):
-    basesta, baseatk, basedef = tuple(baseStats[appr['spec']])
+def matchApprIVs(appr):
+    basesta, baseatk, basedef = tuple(pkgo_data.baseStats[appr['spec']])
     
     # Array of possible Pokemon
     pkarr = []
     
     for level in appr['levels']:
         # Brute force
-        for ivsta in range(appr['imin'], maxIV + 1):
+        for ivsta in range(appr['imin'], pkgo_pkmn.maxIV + 1):
             # Quick exit if STA value doesn't match HP
-            ehp = calcHP(basesta + ivsta, level)
+            ehp = pkgo_pkmn.calcHP(basesta + ivsta, level)
             if ehp == int(appr['hp']):
-                for ivatk in range(appr['imin'], maxIV + 1):
-                    for ivdef in range(appr['imin'], maxIV + 1):
+                for ivatk in range(appr['imin'], pkgo_pkmn.maxIV + 1):
+                    for ivdef in range(appr['imin'], pkgo_pkmn.maxIV + 1):
                         # Exit if appraisal sanity check fails
                         if not checkIVsFitAppr(appr, ivsta, ivatk, ivdef):
                             continue
                         
-                        ecp = calcCP(basesta + ivsta, baseatk + ivatk, basedef + ivdef, level)
+                        ecp = pkgo_pkmn.calcCP(basesta + ivsta, baseatk + ivatk, basedef + ivdef, level)
                         
                         # Exit if IV's don't match CP
                         if ecp == int(appr['cp']):
-                            ivsum = ivsta + ivatk + ivdef
                             pkarr.append(dict({
                                 'hp': appr['hp'],
                                 'cp': appr['hp'],
@@ -129,6 +105,7 @@ def lineToAppr(line):
     
     # Check if flags is present as it is optional
     flags = ""
+    
     try:
         appr['spec'], appr['cp'], appr['hp'], cost, gapp, appr['high'], happ = tuple(splitline)
     except:
@@ -150,80 +127,19 @@ def lineToAppr(line):
     appr['imin'] = 0
     
     # Find possible levels
-    appr['levels'] = dustJson[cost]
+    appr['levels'] = pkgo_data.dustJson[cost]
     # Filter out half-levels if not powered up
     if not flags or 'p' not in flags:
-        appr['levels'] = filter(lambda x:isinstance(x,int), appr['levels'])
+        appr['levels'] = filter(lambda x:x.is_integer(), appr['levels'])
     
     # If hatched
     if flags and 'h' in flags:
         # and not powered up, level is 20
         if 'p' not in flags:
-            appr['levels'] = ["20"]
+            appr['levels'] = ["20.0"]
         # Hatched IVs cannot be lower than 10
         appr['hmin'] = max(10, appr['hmin'])
         appr['imin'] = 10
     
     return appr
-
-def main(argv=None):
-    usage="Usage: iv.py <input.txt> <directory with Pokemon Go data files>"
-    parser = optparse.OptionParser(usage=usage)
-    
-    (options, args) = parser.parse_args()
-    
-    # Get arguments
-    try:
-        inputFileName, dataDir = args
-    except ValueError:
-        print "ERROR: Invalid number of arguments"
-        print usage
-        return 1
-    
-    baseStatsName = os.path.join(dataDir, "baseStats.yml")
-    dustJsonName = os.path.join(dataDir, "dust-to-level.json")
-    levelToCpmName = os.path.join(dataDir, "level-to-cpm.json")
-    
-    global baseStats
-    global dustJson
-    global levelToCpm
-    
-    baseStatsFile = open(baseStatsName, "r")
-    baseStats = yaml.load(baseStatsFile)
-    baseStatsFile.close()
-    
-    dustJsonFile = open(dustJsonName, "r")
-    dustJson = json.load(dustJsonFile)
-    dustJsonFile.close()
-    
-    levelToCpmFile = open(levelToCpmName, "r")
-    levelToCpm = json.load(levelToCpmFile)
-    levelToCpmFile.close()
-    
-    
-    inputFile = open(inputFileName, "r")
-    lines = inputFile.readlines()
-    inputFile.close()
-    
-    cnt = 1
-    for line in lines:
-        # Skip empty lines, comments
-        if line == "\n" or line[0] == "#":
-            continue
-        
-        # Convert lines to appraisals
-        appr = lineToAppr(line)
-        
-        # Check IVs for each appraisal
-        print "PKMN {0} ({1} CP {2}):".format(cnt, appr['spec'], appr['cp'])
-        pkarr = matchApprIVs(appr, baseStats)
-        for pk in pkarr:
-            print "Possible match: {0}".format(PKMNToStr(pk))
-        
-        cnt += 1
-    
-    return 0
-
-if __name__ == "__main__":
-    sys.exit(main())
 

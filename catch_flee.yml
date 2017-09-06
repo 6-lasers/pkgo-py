@@ -1,0 +1,756 @@
+Bulbasaur:
+  catch: 20.0
+  flee: 10.0
+Ivysaur:
+  catch: 10.0
+  flee: 7.0
+Venusaur:
+  catch: 5.0
+  flee: 5.0
+Charmander:
+  catch: 20.0
+  flee: 10.0
+Charmeleon:
+  catch: 10.0
+  flee: 7.0
+Charizard:
+  catch: 5.0
+  flee: 5.0
+Squirtle:
+  catch: 20.0
+  flee: 10.0
+Wartortle:
+  catch: 10.0
+  flee: 7.0
+Blastoise:
+  catch: 5.0
+  flee: 5.0
+Caterpie:
+  catch: 50.0
+  flee: 20.0
+Metapod:
+  catch: 25.0
+  flee: 9.0
+Butterfree:
+  catch: 12.5
+  flee: 6.0
+Weedle:
+  catch: 50.0
+  flee: 20.0
+Kakuna:
+  catch: 25.0
+  flee: 9.0
+Beedrill:
+  catch: 12.5
+  flee: 6.0
+Pidgey:
+  catch: 50.0
+  flee: 20.0
+Pidgeotto:
+  catch: 25.0
+  flee: 9.0
+Pidgeot:
+  catch: 12.5
+  flee: 6.0
+Rattata:
+  catch: 50.0
+  flee: 20.0
+Raticate:
+  catch: 20.0
+  flee: 7.0
+Spearow:
+  catch: 50.0
+  flee: 15.0
+Fearow:
+  catch: 20.0
+  flee: 7.0
+Ekans:
+  catch: 50.0
+  flee: 15.0
+Arbok:
+  catch: 20.0
+  flee: 7.0
+Pikachu:
+  catch: 20.0
+  flee: 10.0
+Raichu:
+  catch: 10.0
+  flee: 6.0
+Sandshrew:
+  catch: 50.0
+  flee: 10.0
+Sandslash:
+  catch: 20.0
+  flee: 6.0
+NidoranF:
+  catch: 50.0
+  flee: 15.0
+Nidorina:
+  catch: 25.0
+  flee: 7.0
+Nidoqueen:
+  catch: 12.5
+  flee: 5.0
+NidoranM:
+  catch: 50.0
+  flee: 15.0
+Nidorino:
+  catch: 25.0
+  flee: 7.0
+Nidoking:
+  catch: 12.5
+  flee: 5.0
+Clefairy:
+  catch: 30.0
+  flee: 10.0
+Clefable:
+  catch: 10.0
+  flee: 6.0
+Vulpix:
+  catch: 30.0
+  flee: 10.0
+Ninetales:
+  catch: 10.0
+  flee: 6.0
+Jigglypuff:
+  catch: 50.0
+  flee: 10.0
+Wigglytuff:
+  catch: 20.0
+  flee: 6.0
+Zubat:
+  catch: 50.0
+  flee: 20.0
+Golbat:
+  catch: 20.0
+  flee: 7.0
+Oddish:
+  catch: 60.0
+  flee: 15.0
+Gloom:
+  catch: 30.0
+  flee: 7.0
+Vileplume:
+  catch: 15.0
+  flee: 5.0
+Paras:
+  catch: 39.0
+  flee: 15.0
+Parasect:
+  catch: 20.0
+  flee: 7.0
+Venonat:
+  catch: 50.0
+  flee: 15.0
+Venomoth:
+  catch: 20.0
+  flee: 7.0
+Diglett:
+  catch: 50.0
+  flee: 10.0
+Dugtrio:
+  catch: 20.0
+  flee: 6.0
+Meowth:
+  catch: 50.0
+  flee: 15.0
+Persian:
+  catch: 20.0
+  flee: 7.0
+Psyduck:
+  catch: 50.0
+  flee: 10.0
+Golduck:
+  catch: 20.0
+  flee: 6.0
+Mankey:
+  catch: 50.0
+  flee: 10.0
+Primeape:
+  catch: 20.0
+  flee: 6.0
+Growlithe:
+  catch: 30.0
+  flee: 10.0
+Arcanine:
+  catch: 10.0
+  flee: 6.0
+Poliwag:
+  catch: 50.0
+  flee: 15.0
+Poliwhirl:
+  catch: 25.0
+  flee: 7.0
+Poliwrath:
+  catch: 12.5
+  flee: 5.0
+Abra:
+  catch: 50.0
+  flee: 99.0
+Kadabra:
+  catch: 25.0
+  flee: 7.0
+Alakazam:
+  catch: 10.0
+  flee: 5.0
+Machop:
+  catch: 50.0
+  flee: 10.0
+Machoke:
+  catch: 25.0
+  flee: 7.0
+Machamp:
+  catch: 10.0
+  flee: 5.0
+Bellsprout:
+  catch: 50.0
+  flee: 15.0
+Weepinbell:
+  catch: 25.0
+  flee: 7.0
+Victreebel:
+  catch: 12.5
+  flee: 5.0
+Tentacool:
+  catch: 50.0
+  flee: 15.0
+Tentacruel:
+  catch: 20.0
+  flee: 7.0
+Geodude:
+  catch: 50.0
+  flee: 10.0
+Graveler:
+  catch: 25.0
+  flee: 7.0
+Golem:
+  catch: 12.5
+  flee: 5.0
+Ponyta:
+  catch: 40.0
+  flee: 10.0
+Rapidash:
+  catch: 15.0
+  flee: 6.0
+Slowpoke:
+  catch: 50.0
+  flee: 10.0
+Slowbro:
+  catch: 20.0
+  flee: 6.0
+Magnemite:
+  catch: 50.0
+  flee: 10.0
+Magneton:
+  catch: 20.0
+  flee: 6.0
+Farfetch'd:
+  catch: 30.0
+  flee: 9.0
+Doduo:
+  catch: 50.0
+  flee: 10.0
+Dodrio:
+  catch: 20.0
+  flee: 6.0
+Seel:
+  catch: 50.0
+  flee: 9.0
+Dewgong:
+  catch: 20.0
+  flee: 6.0
+Grimer:
+  catch: 50.0
+  flee: 10.0
+Muk:
+  catch: 20.0
+  flee: 6.0
+Shellder:
+  catch: 50.0
+  flee: 10.0
+Cloyster:
+  catch: 20.0
+  flee: 6.0
+Gastly:
+  catch: 40.0
+  flee: 10.0
+Haunter:
+  catch: 20.0
+  flee: 7.0
+Gengar:
+  catch: 10.0
+  flee: 5.0
+Onix:
+  catch: 20.0
+  flee: 9.0
+Drowzee:
+  catch: 50.0
+  flee: 10.0
+Hypno:
+  catch: 20.0
+  flee: 6.0
+Krabby:
+  catch: 50.0
+  flee: 15.0
+Kingler:
+  catch: 20.0
+  flee: 7.0
+Voltorb:
+  catch: 50.0
+  flee: 10.0
+Electrode:
+  catch: 20.0
+  flee: 6.0
+Exeggcute:
+  catch: 50.0
+  flee: 10.0
+Exeggutor:
+  catch: 20.0
+  flee: 6.0
+Cubone:
+  catch: 40.0
+  flee: 10.0
+Marowak:
+  catch: 15.0
+  flee: 6.0
+Hitmonlee:
+  catch: 20.0
+  flee: 9.0
+Hitmonchan:
+  catch: 20.0
+  flee: 9.0
+Lickitung:
+  catch: 20.0
+  flee: 9.0
+Koffing:
+  catch: 50.0
+  flee: 10.0
+Weezing:
+  catch: 20.0
+  flee: 6.0
+Rhyhorn:
+  catch: 50.0
+  flee: 10.0
+Rhydon:
+  catch: 5.0
+  flee: 6.0
+Chansey:
+  catch: 19.0
+  flee: 9.0
+Tangela:
+  catch: 40.0
+  flee: 9.0
+Kangaskhan:
+  catch: 20.0
+  flee: 9.0
+Horsea:
+  catch: 50.0
+  flee: 10.0
+Seadra:
+  catch: 20.0
+  flee: 6.0
+Goldeen:
+  catch: 50.0
+  flee: 15.0
+Seaking:
+  catch: 20.0
+  flee: 7.0
+Staryu:
+  catch: 50.0
+  flee: 15.0
+Starmie:
+  catch: 20.0
+  flee: 6.0
+Mr. Mime:
+  catch: 30.0
+  flee: 9.0
+Scyther:
+  catch: 30.0
+  flee: 9.0
+Jynx:
+  catch: 30.0
+  flee: 9.0
+Electabuzz:
+  catch: 20.0
+  flee: 9.0
+Magmar:
+  catch: 20.0
+  flee: 9.0
+Pinsir:
+  catch: 30.0
+  flee: 9.0
+Tauros:
+  catch: 30.0
+  flee: 9.0
+Magikarp:
+  catch: 70.0
+  flee: 15.0
+Gyarados:
+  catch: 10.0
+  flee: 7.0
+Lapras:
+  catch: 5.0
+  flee: 9.0
+Ditto:
+  catch: 20.0
+  flee: 10.0
+Eevee:
+  catch: 40.0
+  flee: 10.0
+Vaporeon:
+  catch: 12.5
+  flee: 6.0
+Jolteon:
+  catch: 12.5
+  flee: 6.0
+Flareon:
+  catch: 12.5
+  flee: 6.0
+Porygon:
+  catch: 40.0
+  flee: 9.0
+Omanyte:
+  catch: 40.0
+  flee: 9.0
+Omastar:
+  catch: 15.0
+  flee: 5.0
+Kabuto:
+  catch: 40.0
+  flee: 9.0
+Kabutops:
+  catch: 15.0
+  flee: 5.0
+Aerodactyl:
+  catch: 20.0
+  flee: 9.0
+Snorlax:
+  catch: 5.0
+  flee: 9.0
+Articuno:
+  catch: 3.0
+  flee: 10.0
+Zapdos:
+  catch: 3.0
+  flee: 10.0
+Moltres:
+  catch: 3.0
+  flee: 10.0
+Dratini:
+  catch: 40.0
+  flee: 9.0
+Dragonair:
+  catch: 10.0
+  flee: 6.0
+Dragonite:
+  catch: 5.0
+  flee: 5.0
+Mewtwo:
+  catch: 2.0
+  flee: 10.0
+Mew:
+  catch: 2.0
+  flee: 10.0
+Chikorita:
+  catch: 20.0
+  flee: 10.0
+Bayleef:
+  catch: 12.5
+  flee: 7.0
+Meganium:
+  catch: 5.0
+  flee: 5.0
+Cyndaquil:
+  catch: 20.0
+  flee: 10.0
+Quilava:
+  catch: 12.5
+  flee: 7.0
+バクフーン:
+Typhlosion:
+  catch: 5.0
+  flee: 5.0
+Totodile:
+  catch: 20.0
+  flee: 10.0
+Crocrodil:
+Croconaw:
+  catch: 12.5
+  flee: 7.0
+Feraligatr:
+  catch: 5.0
+  flee: 5.0
+Sentret:
+  catch: 50.0
+  flee: 20.0
+Furret:
+  catch: 15.0
+  flee: 7.0
+Hoothoot:
+  catch: 50.0
+  flee: 15.0
+Noctowl:
+  catch: 15.0
+  flee: 7.0
+Ledyba:
+  catch: 50.0
+  flee: 20.0
+Ledian:
+  catch: 15.0
+  flee: 7.0
+Spinarak:
+  catch: 50.0
+  flee: 20.0
+Ariados:
+  catch: 15.0
+  flee: 7.0
+Crobat:
+  catch: 10.0
+  flee: 5.0
+Chinchou:
+  catch: 40.0
+  flee: 10.0
+Lanturn:
+  catch: 15.0
+  flee: 7.0
+Pichu:
+  catch: 12.0
+  flee: 5.0
+Cleffa:
+  catch: 12.0
+  flee: 5.0
+Igglybuff:
+  catch: 12.0
+  flee: 5.0
+Togepi:
+  catch: 12.0
+  flee: 5.0
+Togetic:
+  catch: 5.0
+  flee: 5.0
+Natu:
+  catch: 40.0
+  flee: 15.0
+Xatu:
+  catch: 15.0
+  flee: 7.0
+Mareep:
+  catch: 50.0
+  flee: 10.0
+Flaaffy:
+  catch: 25.0
+  flee: 7.0
+Ampharos:
+  catch: 12.5
+  flee: 5.0
+Bellossom:
+  catch: 5.0
+  flee: 5.0
+Marill:
+  catch: 50.0
+  flee: 10.0
+Azumarill:
+  catch: 15.0
+  flee: 7.0
+Sudowoodo:
+  catch: 12.5
+  flee: 5.0
+Politoed:
+  catch: 10.0
+  flee: 5.0
+Hoppip:
+  catch: 50.0
+  flee: 12.0
+Skiploom:
+  catch: 25.0
+  flee: 7.0
+Jumpluff:
+  catch: 12.5
+  flee: 5.0
+Aipom:
+  catch: 20.0
+  flee: 9.0
+Sunkern:
+  catch: 50.0
+  flee: 9.0
+Sunflora:
+  catch: 10.0
+  flee: 7.0
+Yanma:
+  catch: 30.0
+  flee: 10.0
+Wooper:
+  catch: 40.0
+  flee: 10.0
+Quagsire:
+  catch: 15.0
+  flee: 7.0
+Espeon:
+  catch: 0.0
+  flee: 5.0
+Umbreon:
+  catch: 0.0
+  flee: 5.0
+Murkrow:
+  catch: 20.0
+  flee: 10.0
+Slowking:
+  catch: 10.0
+  flee: 5.0
+Misdreavus:
+  catch: 30.0
+  flee: 7.0
+Unown:
+  catch: 30.0
+  flee: 10.0
+Wobbuffet:
+  catch: 25.0
+  flee: 7.0
+Girafarig:
+  catch: 30.0
+  flee: 7.0
+Pineco:
+  catch: 40.0
+  flee: 12.0
+Forretress:
+  catch: 15.0
+  flee: 7.0
+Dunsparce:
+  catch: 30.0
+  flee: 20.0
+Gligar:
+  catch: 20.0
+  flee: 7.0
+Steelix:
+  catch: 10.0
+  flee: 5.0
+Snubbull:
+  catch: 40.0
+  flee: 10.0
+Granbull:
+  catch: 15.0
+  flee: 8.0
+Qwilfish:
+  catch: 30.0
+  flee: 8.0
+Scizor:
+  catch: 5.0
+  flee: 5.0
+Shuckle:
+  catch: 30.0
+  flee: 7.0
+Heracross:
+  catch: 30.0
+  flee: 9.0
+Sneasel:
+  catch: 20.0
+  flee: 7.0
+Teddiursa:
+  catch: 50.0
+  flee: 20.0
+Ursaring:
+  catch: 15.0
+  flee: 7.0
+Limagma:
+Slugma:
+  catch: 30.0
+  flee: 10.0
+Magcargo:
+  catch: 12.5
+  flee: 6.0
+Swinub:
+  catch: 30.0
+  flee: 10.0
+Piloswine:
+  catch: 12.5
+  flee: 6.0
+Corsola:
+  catch: 30.0
+  flee: 12.0
+Remoraid:
+  catch: 50.0
+  flee: 10.0
+Octillery:
+  catch: 15.0
+  flee: 7.0
+Delibird:
+  catch: 20.0
+  flee: 20.0
+Mantine:
+  catch: 30.0
+  flee: 7.0
+Skarmory:
+  catch: 20.0
+  flee: 9.0
+Houndour:
+  catch: 40.0
+  flee: 10.0
+Houndoom:
+  catch: 15.0
+  flee: 6.0
+Kingdra:
+  catch: 10.0
+  flee: 5.0
+Phanpy:
+  catch: 50.0
+  flee: 20.0
+Donphan:
+  catch: 12.5
+  flee: 7.0
+Porygon2:
+  catch: 5.0
+  flee: 5.0
+Stantler:
+  catch: 30.0
+  flee: 8.0
+Smeargle:
+  catch: 25.0
+  flee: 7.0
+Tyrogue:
+  catch: 0.0
+  flee: 20.0
+Hitmontop:
+  catch: 10.0
+  flee: 5.0
+Smoochum:
+  catch: 0.0
+  flee: 20.0
+Elekid:
+  catch: 0.0
+  flee: 20.0
+Magby:
+  catch: 0.0
+  flee: 20.0
+Miltank:
+  catch: 20.0
+  flee: 8.0
+Blissey:
+  catch: 5.0
+  flee: 5.0
+Raikou:
+  catch: 2.0
+  flee: 4.0
+Entei:
+  catch: 2.0
+  flee: 4.0
+Suicune:
+  catch: 2.0
+  flee: 4.0
+Larvitar:
+  catch: 40.0
+  flee: 10.0
+Pupitar:
+  catch: 10.0
+  flee: 7.0
+Tyranitar:
+  catch: 5.0
+  flee: 4.0
+Lugia:
+  catch: 2.0
+  flee: 4.0
+Ho-Oh:
+  catch: 2.0
+  flee: 4.0
+Celebi:
+  catch: 2.0
+  flee: 4.0 
