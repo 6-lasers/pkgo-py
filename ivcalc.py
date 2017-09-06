@@ -3,9 +3,9 @@
 #
 #    ivcalc.py
 #
-#  Calculate IVs
+#  Calculate IV of a Pokemon from the appraisal information
 #
-#  Usage: ivcalc.py <input.txt> <directory with Pokemon Go data files>
+#  Usage: ivcalc.py <input.txt>
 #
 ######################################################
 
@@ -20,16 +20,20 @@ import pkgo_data
 import pkgo_pkmn
 import pkgo_appraise
 
+# Append path of this script to the path of
+# config files which we're loading.
+# Assumes that config files will always live in the same directory.
+dataDir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "gameData")
 
 def main(argv=None):
-    usage="Usage: ivcalc.py <input.txt> <directory with Pokemon Go data files>"
+    usage="Usage: ivcalc.py <input.txt>"
     parser = optparse.OptionParser(usage=usage)
     
     (options, args) = parser.parse_args()
     
     # Get arguments
     try:
-        inputFileName, dataDir = args
+        inputFileName, = args
     except ValueError:
         print "ERROR: Invalid number of arguments"
         print usage

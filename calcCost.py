@@ -6,7 +6,7 @@
 #  Calculate dust and candy costs to power up Pokemon
 #  from one level to another.
 #
-#  Usage: script.py <start level> <end level>
+#  Usage: calcCost.py <start level> <end level>
 #
 ######################################################
 
@@ -15,8 +15,13 @@ import sys
 import optparse
 import json
 
+# Append path of this script to the path of
+# config files which we're loading.
+# Assumes that config files will always live in the same directory.
+script_path = os.path.dirname(os.path.realpath(__file__))
+
 def main(argv=None):
-    usage="script.py <start level> <end level>"
+    usage="calcCost.py <start level> <end level>"
     parser = optparse.OptionParser(usage=usage)
     
     (options, args) = parser.parse_args()
@@ -32,8 +37,8 @@ def main(argv=None):
     startLvl = float(startLvl)
     endLvl = float(endLvl)
     
-    dustJsonName = os.path.join(os.getcwd(), "dust-to-level.json")
-    candyJsonName = os.path.join(os.getcwd(), "level-to-candy.json")
+    dustJsonName = os.path.join(script_path, "gameData", "dust-to-level.json")
+    candyJsonName = os.path.join(script_path, "gameData", "level-to-candy.json")
     
     dustJsonFile = open(dustJsonName, "r")
     dustJson = json.load(dustJsonFile)
