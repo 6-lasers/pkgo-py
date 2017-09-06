@@ -2,14 +2,14 @@
 A set of Python Pokemon Go tools.
 
 ## ivcalc.py
-Usage: ivcalc.py \<input.txt\> \<directory with Pokemon Go data files\>
+Usage: ivcalc.py \<input.txt\>
 
 Frontend for for the appraisal library, which is capable of estimating Pokemon level and IVs from the visible stats, similar to most IV calculators. Takes a text file containing lines matching the following format:
 
 `<species> <cp> <hp> <power up cost (in 100s)> <overall appraisal> <highest stat appraisal> <highest stat type> <(optional) hatched/powered>`
 
 ## cpcalc.py
-Usage: cpcalc.py \<input.txt\> \<directory with Pokemon Go data files\>
+Usage: cpcalc.py \<input.txt\>
 
 Frontend for the CP calculation library. Given a Pokemon species, target level, and IVs, calculates its potential CP. Similar to Gamepress' CP calculator, but does not calculate power-up cost (see calcCost.py). Takes a text file containing lines matching the following format:
 
