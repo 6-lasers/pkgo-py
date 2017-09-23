@@ -7,6 +7,7 @@
 #
 ######################################################
 
+import os
 import math
 import json
 import distutils.util
@@ -62,14 +63,14 @@ def calcCatch(base, level, throw_type, ball, berry, curve, medal, ball_count, ca
     global catchRate
     
     if not levelToCpm:
-        levelToCpmName = "level-to-cpm.json"
+        levelToCpmName = os.path.join("gameData", "level-to-cpm.json")
         
         levelToCpmFile = open(levelToCpmName, "r")
         levelToCpm = json.load(levelToCpmFile)
         levelToCpmFile.close()
     
     if not catchRate:
-        catchRateName = "catch_flee.json"
+        catchRateName = os.path.join("gameData", "catch_flee.json")
         
         catchRateFile = open(catchRateName, "r")
         catchRate = json.load(catchRateFile)
