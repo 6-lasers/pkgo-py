@@ -1,0 +1,17 @@
+{
+"//": "Configuration file for Judge Program Discord bot.",
+
+
+"//": "Server information",
+
+"//": "Bot token ID, needed for authentication.",
+"//": "This is found on the app page when you click to reveal the bot user's token",
+"bot_token": "yourtoken",
+
+"//": "Default bot prefix. Used if server has not set one.",
+"default_prefix":"!",
+
+"//": "Channels for IV Judge to listen in on.",
+"//": "If left empty or omitted, IV Judge will listen on all channels.",
+"iv_channels": []
+}

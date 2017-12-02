@@ -1,0 +1,50 @@
+{
+  "mystic" : {
+    "overall" :
+    [
+    "Overall, your Pokemon is not likely to make much headway in battle.",
+    "Overall, your Pokemon is above average.",
+    "Overall, your Pokemon has certainly caught my attention.",
+    "Overall, your Pokemon is a wonder! What a breathtaking Pokemon!!"
+    ],
+    "indiv" :
+    [
+    "Its stats are not out of the norm, in my opinion.",
+    "Its stats are noticeably trending to the positive.",
+    "I am certainly impressed by its stats, I must say.",
+    "Its stats exceed my calculations. It's incredible!"
+    ]
+  },
+  "valor" : {
+    "overall" :
+    [
+    "Overall, your Pokemon may not be great in battle, but I still like it!.",
+    "Overall, your Pokemon is a decent Pokemon.",
+    "Overall, your Pokemon is a strong Pokemon. You should be proud!",
+    "Overall, your Pokemon simply amazes me. It can accomplish anything!"
+    ],
+    "indiv" :
+    [
+      "Its stats don't point to greatness in battle.",
+      "Its stats indicate that in battle, it'll get the job done.",
+      "It's got excellent stats! How exciting!",
+      "I'm blown away by its stats. WOW!"
+    ]
+  },
+  "instinct" : {
+    "overall" :
+    [
+    "Overall, your Pokemon has room for improvement as far as battling goes.",
+    "Overall, your Pokemon is pretty decent!",
+    "Overall, your Pokemon is really strong!",
+    "Overall, your Pokemon looks like it can really battle with the best of them!"
+    ],
+    "indiv" :
+    [
+      "Its stats are all right, but kinda basic, as far as I can see.",
+      "It's definitely got some good stats. Definitely!",
+      "Its stats are really strong! Impressive.",
+      "Its stats are the best I've ever seen! No doubt about it!"
+    ]
+  }
+}

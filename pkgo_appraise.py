@@ -64,10 +64,10 @@ def checkIVsFitAppr(appr, ivsta, ivatk, ivdef):
 # Match IV values for an appraisal,
 # and return an array of possible Pokemon
 def matchApprIVs(appr):
-    basesta, baseatk, basedef = tuple(pkgo_data.baseStats[appr['spec']])
-    
     # Array of possible Pokemon
     pkarr = []
+    
+    basesta, baseatk, basedef = tuple(pkgo_data.baseStats[appr['spec']])
     
     for level in appr['levels']:
         # Brute force
@@ -97,7 +97,7 @@ def matchApprIVs(appr):
     return pkarr
 
 # Convert a line of text to an appraisal. Format is:
-# <name> <iv> <hp> <power up cost (in 100s)> <overall appraisal> <highest stat appraisal> <highest stat type> <(optional) hatched/powered>
+# <name> <iv> <hp> <power up cost (in 100s)> <overall appraisal> <highest stat type> <highest stat appraisal> <(optional) hatched/powered>
 def lineToAppr(line):
     splitline = line.split()
     

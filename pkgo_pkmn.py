@@ -59,5 +59,5 @@ def PKMNFromStr(str):
 
 def PKMNToStr(pk):
     ivsum = pk['ivsta'] + pk['ivatk'] + pk['ivdef']
-    return "Level {0} {1}, IVs {2:2}, {3:2}, {4:2}, total {5:2} ({6:.1%}) ({2:x}{3:x}{4:x})".format(pk['level'], pk['spec'], pk['ivsta'], pk['ivatk'], pk['ivdef'], ivsum, ivsum / 45.0)
+    return "Level {0} {1}, IVs STA {2:2}, ATK {3:2}, DEF {4:2}, total {5:2} ({6:.1%}) ({2:x}{3:x}{4:x})".format(pk['level'], pk['spec'], pk['ivsta'], pk['ivatk'], pk['ivdef'], ivsum, ivsum / 45.0)
 
