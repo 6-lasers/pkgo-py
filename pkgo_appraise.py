@@ -74,11 +74,11 @@ def matchApprIVs(appr):
         for ivsta in range(appr['imin'], pkgo_pkmn.maxIV + 1):
             # Quick exit if STA value doesn't match HP
             ehp = pkgo_pkmn.calcHP(basesta + ivsta, level)
-            if ehp == int(appr['hp']):
+            if not appr['hp'] or ehp == int(appr['hp']):
                 for ivatk in range(appr['imin'], pkgo_pkmn.maxIV + 1):
                     for ivdef in range(appr['imin'], pkgo_pkmn.maxIV + 1):
                         # Exit if appraisal sanity check fails
-                        if not checkIVsFitAppr(appr, ivsta, ivatk, ivdef):
+                        if appr['high'] and not checkIVsFitAppr(appr, ivsta, ivatk, ivdef):
                             continue
                         
                         ecp = pkgo_pkmn.calcCP(basesta + ivsta, baseatk + ivatk, basedef + ivdef, level)
@@ -105,41 +105,66 @@ def lineToAppr(line):
     
     # Check if flags is present as it is optional
     flags = ""
+    cost = None
+    gapp = None
+    happ = None
     
     try:
         appr['spec'], appr['cp'], appr['hp'], cost, gapp, appr['high'], happ = tuple(splitline)
     except:
-        appr['spec'], appr['cp'], appr['hp'], cost, gapp, appr['high'], happ, flags = tuple(splitline)
+        try:
+            appr['spec'], appr['cp'], appr['hp'], cost, gapp, appr['high'], happ, flags = tuple(splitline)
+        except:
+            appr['spec'], appr['cp'], raid = tuple(splitline)
     
     # Capitalize species name
     appr['spec'] = appr['spec'].capitalize()
     # Normalize dust cost
-    cost = str(int(cost) * 100)
+    # and find possible levels
+    if cost:
+        cost = str(int(cost) * 100)
+        appr['levels'] = pkgo_data.dustJson[cost]
     
     # Determine appraisal minimums and maximums.
     # 'gmin/gmax' refer to the Pokemon's overall quality in appraisal ("is a wonder!")
     # 'hmin/hmax' refer to the 'best attribute' mentioned in appraisal ("stats exceed my calculations")
-    appr['gmin'] = gappToMin[int(gapp)]
-    appr['gmax'] = gappToMin[int(gapp) + 1]
-    appr['hmin'] = happToMin[int(happ)]
-    appr['hmax'] = happToMin[int(happ) + 1]
+    if gapp and happ:
+        appr['gmin'] = gappToMin[int(gapp)]
+        appr['gmax'] = gappToMin[int(gapp) + 1]
+        appr['hmin'] = happToMin[int(happ)]
+        appr['hmax'] = happToMin[int(happ) + 1]
+    else:
+        appr['hp'] = None
+        appr['high'] = None
+        if raid:
+            appr['gmin'] = 30
+            appr['gmax'] = 45
+            appr['hmin'] = 10
+            appr['hmax'] = 15
+
+            flags = "h"
+        else:
+            appr['gmin'] = 0
+            appr['gmax'] = 45
+            appr['hmin'] = 0
+            appr['hmax'] = 15
+            appr['levels'] = []
+    
     # By default, IVs can be as low as 0
     appr['imin'] = 0
-    
-    # Find possible levels
-    appr['levels'] = pkgo_data.dustJson[cost]
-    # Filter out half-levels if not powered up
-    if not flags or 'p' not in flags:
-        appr['levels'] = filter(lambda x:x.is_integer(), appr['levels'])
     
     # If hatched
     if flags and 'h' in flags:
         # and not powered up, level is 20
         if 'p' not in flags:
-            appr['levels'] = ["20.0"]
+            appr['levels'] = [20.0]
         # Hatched IVs cannot be lower than 10
         appr['hmin'] = max(10, appr['hmin'])
         appr['imin'] = 10
+    
+    # Filter out half-levels if not powered up
+    if not flags or 'p' not in flags:
+        appr['levels'] = filter(lambda x:x.is_integer(), appr['levels'])
     
     return appr
 

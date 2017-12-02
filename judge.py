@@ -158,7 +158,7 @@ async def appraisal_help(ctx):
 async def iv(ctx):
     """Check IV of a Pokemon.
     
-    Usage: !iv <species> <iv> <hp> <power up cost (in 100s)> <overall appraisal> <highest stat appraisal> <highest stat type> <(optional) hatched/powered>
+    Usage: !iv <species> <cp> <hp> <power up cost (in 100s)> <overall appraisal> <highest stat appraisal> <highest stat type> <(optional) hatched/powered>
     
     """
     
@@ -182,5 +182,63 @@ async def iv(ctx):
         
         await Judge.send_message(ctx.message.channel,  response)
 
+@Judge.command(pass_context = True)
+async def raidiv(ctx):
+    """Check IV of a Pokemon.
+    
+    Usage: !raidiv <species> <cp>
+    
+    """
+    
+    if check_channel(ctx.message.channel.name):
+        line = ctx.message.content.split(" ", 1)[1]
+        
+        # Convert lines to appraisals
+        appr = pkgo_appraise.lineToAppr(line + " 1")
+        
+        try:
+            # Check IVs for each appraisal
+            response =  "PKMN {0}: ({1} CP {2}):\n".format(ctx.message.author.mention, appr['spec'], appr['cp'])
+            pkarr = pkgo_appraise.matchApprIVs(appr)
+            if pkarr:
+                for pk in pkarr:
+                    response += "Possible match: {0}\n".format(pkgo_pkmn.PKMNToStr(pk))
+            else:
+                response += "No matches! Please double check your request for typos, or check if your Pokemon has been powered up.\n"
+        except KeyError as e:
+            response = "{0} is not a Pokemon species!\n".format(appr['spec'])
+        
+        await Judge.send_message(ctx.message.channel, response)
+
+@Judge.command(pass_context = True)
+async def cprange(ctx):
+    """Check CP of a raid Pokemon.
+    
+    Usage: !cprange <species>
+    
+    """
+    
+    if check_channel(ctx.message.channel.name):
+        line = ctx.message.content.split(" ", 1)[1]
+
+    try:
+        pk = dict({
+            'spec' : line.capitalize(),
+            'ivsta' : 10,
+            'ivatk' : 10,
+            'ivdef' : 10,
+            'level' : 20.0
+        })
+        cplo = pkgo_pkmn.calcCPForPKMN(pk)
+        pk['ivsta'] = 15
+        pk['ivatk'] = 15
+        pk['ivdef'] = 15
+        cphi = pkgo_pkmn.calcCPForPKMN(pk)
+
+        response = "{0} CP range: {1}-{2}".format(pk['spec'], cplo, cphi)
+    except KeyError as e:
+        response = "{0} is not a Pokemon species!\n".format(line)
+
+    await Judge.send_message(ctx.message.channel, response)
 
 Judge.run(config['bot_token'])
