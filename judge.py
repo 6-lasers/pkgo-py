@@ -12,8 +12,6 @@ import asyncio
 import os
 import json
 
-import yaml
-
 import pkgo_data
 import pkgo_pkmn
 import pkgo_appraise
@@ -40,13 +38,13 @@ def load_config():
     with open("config.json", "r") as fd:
         config = json.load(fd)
     
-    baseStatsName = os.path.join(dataDir, "baseStats.yml")
+    baseStatsName = os.path.join(dataDir, "baseStats.json")
     dustJsonName = os.path.join(dataDir, "dust-to-level.json")
     levelToCpmName = os.path.join(dataDir, "level-to-cpm.json")
     teamAppraisalName = os.path.join(dataDir, "team_appraisal.json")
     
     baseStatsFile = open(baseStatsName, "r")
-    pkgo_data.baseStats = yaml.load(baseStatsFile)
+    pkgo_data.baseStats = json.load(baseStatsFile)
     baseStatsFile.close()
     
     dustJsonFile = open(dustJsonName, "r")
