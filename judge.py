@@ -221,7 +221,7 @@ async def cprange(ctx):
 
     try:
         pk = dict({
-            'spec' : line.capitalize(),
+            'spec' : line.lower(),
             'ivsta' : 10,
             'ivatk' : 10,
             'ivdef' : 10,

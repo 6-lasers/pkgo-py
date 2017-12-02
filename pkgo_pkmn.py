@@ -26,7 +26,7 @@ def calcCP(sta, atk, defe, lvl):
     return calcCPBackend(sta, atk, defe, cpm)
 
 def calcCPForPKMN(pk):
-    basesta, baseatk, basedef = tuple(pkgo_data.baseStats[pk['spec']])
+    basesta, baseatk, basedef = tuple(pkgo_data.baseStats[pk['spec'].lower()])
     return calcCP(basesta + pk['ivsta'], baseatk+ pk['ivatk'], basedef + pk['ivdef'], pk['level'])
 
 # Calculate HP
@@ -53,11 +53,11 @@ def PKMNFromStr(str):
         pk['level'], pk['spec'], ivs = tuple(splitline)
         ivstrToIVs(pk, ivs)
     pk['level'] = float(pk['level'])
-    pk['spec'] = pk['spec'].capitalize()
+    pk['spec'] = pk['spec'].lower()
     
     return pk
 
 def PKMNToStr(pk):
     ivsum = pk['ivsta'] + pk['ivatk'] + pk['ivdef']
-    return "Level {0} {1}, IVs STA {2:2}, ATK {3:2}, DEF {4:2}, total {5:2} ({6:.1%}) ({2:x}{3:x}{4:x})".format(pk['level'], pk['spec'], pk['ivsta'], pk['ivatk'], pk['ivdef'], ivsum, ivsum / 45.0)
+    return "Level {0} {1}, IVs STA {2:2}, ATK {3:2}, DEF {4:2}, total {5:2} ({6:.1%}) ({2:x}{3:x}{4:x})".format(pk['level'], pk['spec'].capitalize(), pk['ivsta'], pk['ivatk'], pk['ivdef'], ivsum, ivsum / 45.0)
 

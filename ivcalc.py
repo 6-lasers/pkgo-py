@@ -14,8 +14,6 @@ import sys
 import optparse
 import json
 
-import yaml
-
 import pkgo_data
 import pkgo_pkmn
 import pkgo_appraise
@@ -39,12 +37,12 @@ def main(argv=None):
         print usage
         return 1
     
-    baseStatsName = os.path.join(dataDir, "baseStats.yml")
+    baseStatsName = os.path.join(dataDir, "baseStats.json")
     dustJsonName = os.path.join(dataDir, "dust-to-level.json")
     levelToCpmName = os.path.join(dataDir, "level-to-cpm.json")
     
     baseStatsFile = open(baseStatsName, "r")
-    pkgo_data.baseStats = yaml.load(baseStatsFile)
+    pkgo_data.baseStats = json.load(baseStatsFile)
     baseStatsFile.close()
     
     dustJsonFile = open(dustJsonName, "r")

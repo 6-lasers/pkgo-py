@@ -67,7 +67,7 @@ def matchApprIVs(appr):
     # Array of possible Pokemon
     pkarr = []
     
-    basesta, baseatk, basedef = tuple(pkgo_data.baseStats[appr['spec']])
+    basesta, baseatk, basedef = tuple(pkgo_data.baseStats[appr['spec'].lower()])
     
     for level in appr['levels']:
         # Brute force
@@ -117,7 +117,7 @@ def lineToAppr(line):
         except:
             appr['spec'], appr['cp'], raid = tuple(splitline)
     
-    # Capitalize species name
+    # Sanitize species name
     appr['spec'] = appr['spec'].capitalize()
     # Normalize dust cost
     # and find possible levels
