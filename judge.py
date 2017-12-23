@@ -233,7 +233,7 @@ async def cprange(ctx):
         pk['ivdef'] = 15
         cphi = pkgo_pkmn.calcCPForPKMN(pk)
 
-        response = "{0} CP range: {1}-{2}".format(pk['spec'], cplo, cphi)
+        response = "{0} CP range: {1}-{2}".format(pk['spec'].capitalize(), cplo, cphi)
     except KeyError as e:
         response = "{0} is not a Pokemon species!\n".format(line)
 

@@ -32,7 +32,7 @@ def main(argv=None):
     
     # Find region of interest
     begin = 0
-    begin_pattern = "Rating"
+    begin_pattern = "#	Pokemon	STA	ATK	DEF	CP	Rating"
     end = 0
     end_pattern = "Loading..."
 
@@ -48,6 +48,7 @@ def main(argv=None):
     with open(outputFileName, "w") as f:
         f.write("{\n")
         entries = []
+        """
         # Each entry is 7 lines long.
         # Format:
         #   Species number
@@ -63,7 +64,17 @@ def main(argv=None):
             # species name
             j = i + 1
             name = lines[j].strip().lower()
-            
+            j += 1
+            # stats [STA, ATK, DEF]
+            stats = lines[j:j+3]
+        """
+        # Each entry is a single line, formatted as follows:
+        # <species number> <something> <species name> <base STA> <base ATK> <base DEF> <max CP> <rating>
+        for i in range(begin, end):
+            splitline = lines[i].split()
+            spec_num = int(splitline[0])
+            name = splitline[-6].lower()
+            stats = splitline[-5:-2]
             # Special cases for Nidorans since the
             # Unicode characters get lost in the scrape
             if spec_num == 29:
@@ -71,9 +82,8 @@ def main(argv=None):
             elif spec_num == 32:
                 name = "nidoranm"
             entry = "    \"{0}\": [".format(name)
-            # stats [STA, ATK, DEF]
-            j += 1
-            entry += "{0}]".format(", ".join(lines[j:j+3]))
+            
+            entry += "{0}]".format(", ".join(stats))
             entries.append(entry)
         f.write(",\n".join(entries))
         f.write("\n}")
