@@ -9,6 +9,8 @@
 #
 ######################################################
 
+from __future__ import print_function
+
 import os
 import sys
 import optparse
@@ -33,8 +35,8 @@ def main(argv=None):
     try:
         inputFileName, = args
     except ValueError:
-        print "ERROR: Invalid number of arguments"
-        print usage
+        print("ERROR: Invalid number of arguments")
+        print(usage)
         return 1
     
     baseStatsName = os.path.join(dataDir, "baseStats.json")
@@ -68,10 +70,10 @@ def main(argv=None):
         appr = pkgo_appraise.lineToAppr(line)
         
         # Check IVs for each appraisal
-        print "PKMN {0} ({1} CP {2}):".format(cnt, appr['spec'], appr['cp'])
+        print("PKMN {0} ({1} CP {2}):".format(cnt, appr['spec'], appr['cp']))
         pkarr = pkgo_appraise.matchApprIVs(appr)
         for pk in pkarr:
-            print "Possible match: {0}".format(pkgo_pkmn.PKMNToStr(pk))
+            print("Possible match: {0}".format(pkgo_pkmn.PKMNToStr(pk)))
         
         cnt += 1
     

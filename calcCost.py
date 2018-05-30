@@ -10,6 +10,8 @@
 #
 ######################################################
 
+from __future__ import print_function
+
 import os
 import sys
 import optparse
@@ -30,8 +32,8 @@ def main(argv=None):
     try:
         startLvl, endLvl = args
     except ValueError:
-        print "ERROR: Invalid number of arguments"
-        print usage
+        print("ERROR: Invalid number of arguments")
+        print(usage)
         return 1
     
     startLvl = float(startLvl)
@@ -62,8 +64,8 @@ def main(argv=None):
         candyCost += candyJson[str(tmpLvl)]
         tmpLvl += 0.5
     
-    print "To level from {0} to {1}, you need:".format(startLvl, endLvl)
-    print "{0} dust and {1} candies.".format(dustCost, candyCost)
+    print("To level from {0} to {1}, you need:".format(startLvl, endLvl))
+    print("{0} dust and {1} candies.".format(dustCost, candyCost))
     
     return 0
 

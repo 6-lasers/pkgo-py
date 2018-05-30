@@ -9,6 +9,8 @@
 #
 ######################################################
 
+from __future__ import print_function
+
 import os
 import sys
 import optparse
@@ -33,8 +35,8 @@ def main(argv=None):
     try:
         inputFileName, = args
     except ValueError:
-        print "ERROR: Invalid number of arguments"
-        print usage
+        print("ERROR: Invalid number of arguments")
+        print(usage)
         return 1
     
     baseStatsName = os.path.join(dataDir, "baseStats.json")
@@ -84,7 +86,7 @@ def main(argv=None):
         pk['hp'] = pkgo_pkmn.calcHPForPKMN(pk)
         
         # Check IVs for each appraisal
-        print "PKMN {0} (Lvl. {1} {2} CP {3} HP {4})".format(cnt, pk['level'], pk['spec'], pk['cp'], pk['hp'])
+        print("PKMN {0} (Lvl. {1} {2} CP {3} HP {4})".format(cnt, pk['level'], pk['spec'], pk['cp'], pk['hp']))
         if start_lvl:
             dustCost = 0
             candyCost = 0
@@ -100,8 +102,8 @@ def main(argv=None):
                 candyCost += candyJson[str(tmpLvl)]
                 tmpLvl += 0.5
             
-            print "To level from {0} to {1}, you need:".format(start_lvl, pk['level'])
-            print "{0} dust and {1} candies.".format(dustCost, candyCost)
+            print("To level from {0} to {1}, you need:".format(start_lvl, pk['level']))
+            print("{0} dust and {1} candies.".format(dustCost, candyCost))
         
         cnt += 1
     
