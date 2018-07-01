@@ -9,6 +9,8 @@
 #
 ######################################################
 
+from __future__ import print_function
+
 import os
 import sys
 import optparse
@@ -33,13 +35,14 @@ def main(argv=None):
     try:
         inputFileName, = args
     except ValueError:
-        print "ERROR: Invalid number of arguments"
-        print usage
+        print("ERROR: Invalid number of arguments")
+        print(usage)
         return 1
     
     baseStatsName = os.path.join(dataDir, "baseStats.json")
     dustJsonName = os.path.join(dataDir, "dust-to-level.json")
     levelToCpmName = os.path.join(dataDir, "level-to-cpm.json")
+    candyJsonName = os.path.join(dataDir, "level-to-candy.json")
     
     baseStatsFile = open(baseStatsName, "r")
     pkgo_data.baseStats = json.load(baseStatsFile)
@@ -53,6 +56,9 @@ def main(argv=None):
     pkgo_data.levelToCpm = json.load(levelToCpmFile)
     levelToCpmFile.close()
     
+    candyJsonFile = open(candyJsonName, "r")
+    candyJson = json.load(candyJsonFile)
+    candyJsonFile.close()
     
     inputFile = open(inputFileName, "r")
     lines = inputFile.readlines()
@@ -79,11 +85,27 @@ def main(argv=None):
             # start_lvl = splitline[-1]
         
         pk['cp'] = pkgo_pkmn.calcCPForPKMN(pk)
+        pk['hp'] = pkgo_pkmn.calcHPForPKMN(pk)
         
         # Check IVs for each appraisal
-        print "PKMN {0} (Lvl. {1} {2} CP {3})".format(cnt, pk['level'], pk['spec'], pk['cp'])
+        print("PKMN {0} (Lvl. {1} {2} CP {3} HP {4})".format(cnt, pk['level'], pk['spec'], pk['cp'], pk['hp']))
         if start_lvl:
-            pass
+            dustCost = 0
+            candyCost = 0
+            
+            reverseDustJson = dict()
+            for cost in pkgo_data.dustJson:
+                for level in pkgo_data.dustJson[cost]:
+                    reverseDustJson[level] = int(cost)
+            
+            tmpLvl = float(start_lvl)
+            while tmpLvl != pk['level']:
+                dustCost += reverseDustJson[tmpLvl]
+                candyCost += candyJson[str(tmpLvl)]
+                tmpLvl += 0.5
+            
+            print("To level from {0} to {1}, you need:".format(start_lvl, pk['level']))
+            print("{0} dust and {1} candies.".format(dustCost, candyCost))
         
         cnt += 1
     

@@ -7,6 +7,8 @@
 #
 ######################################################
 
+from __future__ import print_function
+
 import os
 import math
 import json
@@ -33,7 +35,7 @@ def parse_ball_type(ball_type):
             # If that didn't work, test if they gave us the ball type directly as an int
             ball_index = int(ball_type)
         except:
-            print "Couldn't understand ball type \"{0}\"!".format(ball_type)
+            print("Couldn't understand ball type \"{0}\"!".format(ball_type))
             sys.exit(1)
     
     return ball_index
@@ -53,7 +55,7 @@ def parse_berry_type(berry_type):
             # If that didn't work, test if they gave us the berry type directly as an int
             berry_index = int(berry_type)
         except:
-            print "Couldn't understand berry type \"{0}\"!".format(berry_type)
+            print("Couldn't understand berry type \"{0}\"!".format(berry_type))
             sys.exit(1)
     
     return berry_index
@@ -133,7 +135,7 @@ def calcCatch(base, level, throw_type, ball, berry, curve, medal, ball_count, ca
             # If that didn't work, test if they gave us the radius directly as a float
             radius = float(throw_type)
         except:
-            print "Couldn't understand throw type \"{0}\"!".format(throw_type)
+            print("Couldn't understand throw type \"{0}\"!".format(throw_type))
             sys.exit(1)
     
     cpm = levelToCpm[str(level)]
