@@ -24,7 +24,7 @@ maxIV = 15
 
 # Calculate CP
 def calcCPBackend(sta, atk, defe, cpm):
-    return int(max(10, math.floor(round(atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10, 3))))
+    return int(max(10, math.floor(round(atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10, 1))))
 
 def calcCP(sta, atk, defe, lvl):
     cpm = pkgo_data.levelToCpm[str(lvl)]

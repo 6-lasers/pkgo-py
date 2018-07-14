@@ -75,12 +75,14 @@ def main(argv=None):
         
         start_lvl = None
         
-        try:
-            pk = pkgo_pkmn.PKMNFromStr(line)
-        except:
-            splitline = line.split()
-            pk = pkgo_pkmn.PKMNFromStr(" ".join(splitline[:-1]))
-            start_lvl = splitline[-1]
+        print line.split()
+        pk = pkgo_pkmn.PKMNFromStr(line)
+        # try:
+            # pk = pkgo_pkmn.PKMNFromStr(line)
+        # except:
+            # splitline = line.split()
+            # pk = pkgo_pkmn.PKMNFromStr(" ".join(splitline[:-1]))
+            # start_lvl = splitline[-1]
         
         pk['cp'] = pkgo_pkmn.calcCPForPKMN(pk)
         pk['hp'] = pkgo_pkmn.calcHPForPKMN(pk)
