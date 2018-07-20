@@ -23,16 +23,18 @@ import pkgo_data
 maxIV = 15
 
 # Calculate CP
-def calcCPBackend(sta, atk, defe, cpm):
-    return int(max(10, math.floor(round(atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10, 1))))
+def calcCPBackend(sta, atk, defe, cpm, verbose=False):
+    if verbose:
+        print atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10
+    return int(max(10, math.floor(round(atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10, 2))))
 
-def calcCP(sta, atk, defe, lvl):
+def calcCP(sta, atk, defe, lvl, verbose=False):
     cpm = pkgo_data.levelToCpm[str(lvl)]
-    return calcCPBackend(sta, atk, defe, cpm)
+    return calcCPBackend(sta, atk, defe, cpm, verbose)
 
-def calcCPForPKMN(pk):
+def calcCPForPKMN(pk, verbose=False):
     basesta, baseatk, basedef = tuple(pkgo_data.baseStats[pk['spec'].lower()])
-    return calcCP(basesta + pk['ivsta'], baseatk + pk['ivatk'], basedef + pk['ivdef'], pk['level'])
+    return calcCP(basesta + pk['ivsta'], baseatk + pk['ivatk'], basedef + pk['ivdef'], pk['level'], verbose)
 
 # Calculate HP
 def calcHP(sta, lvl):
