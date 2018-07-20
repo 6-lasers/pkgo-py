@@ -73,6 +73,7 @@ def main(argv=None):
         print("PKMN {0} ({1} CP {2}):".format(cnt, appr['spec'], appr['cp']))
         pkarr = pkgo_appraise.matchApprIVs(appr)
         for pk in pkarr:
+            pkgo_pkmn.calcCPForPKMN(pk)
             print("Possible match: {0}".format(pkgo_pkmn.PKMNToStr(pk)))
         
         cnt += 1
