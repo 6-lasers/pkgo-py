@@ -26,7 +26,7 @@ maxIV = 15
 def calcCPBackend(sta, atk, defe, cpm, verbose=False):
     if verbose:
         print atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10
-    return int(max(10, math.floor(round(atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10, 2))))
+    return int(max(10, math.floor(round(atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10, 3))))
 
 def calcCP(sta, atk, defe, lvl, verbose=False):
     cpm = pkgo_data.levelToCpm[str(lvl)]
