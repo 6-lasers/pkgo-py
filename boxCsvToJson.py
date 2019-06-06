@@ -7,10 +7,6 @@
 #
 #  Usage: boxCsvToJson.py <args>
 #
-#  Copyright (C) 2017  Microsoft Corporation
-#  All Rights Reserved
-#  Confidential and Proprietary
-#
 ######################################################
 
 from __future__ import print_function
