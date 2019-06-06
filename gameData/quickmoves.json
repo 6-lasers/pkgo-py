@@ -1,0 +1,380 @@
+{
+    "steel wing": {
+        "type": "steel",
+        "energy": 6,
+        "power": 11,
+        "duration": 800
+    },
+    "iron tail": {
+        "type": "steel",
+        "energy": 7,
+        "power": 15,
+        "duration": 1100
+    },
+    "dragon tail": {
+        "type": "dragon",
+        "energy": 9,
+        "power": 15,
+        "duration": 1100
+    },
+    "counter": {
+        "type": "fighting",
+        "energy": 8,
+        "power": 12,
+        "duration": 900
+    },
+    "waterfall": {
+        "type": "water",
+        "energy": 8,
+        "power": 16,
+        "duration": 1200
+    },
+    "rock throw": {
+        "type": "rock",
+        "energy": 7,
+        "power": 12,
+        "duration": 900
+    },
+    "razor leaf": {
+        "type": "grass",
+        "energy": 7,
+        "power": 13,
+        "duration": 1000
+    },
+    "shadow claw": {
+        "type": "ghost",
+        "energy": 6,
+        "power": 9,
+        "duration": 700
+    },
+    "fire spin": {
+        "type": "fire",
+        "energy": 10,
+        "power": 14,
+        "duration": 1100
+    },
+    "confusion": {
+        "type": "psychic",
+        "energy": 15,
+        "power": 20,
+        "duration": 1600
+    },
+    "poison jab": {
+        "type": "poison",
+        "energy": 7,
+        "power": 10,
+        "duration": 800
+    },
+    "fire fang": {
+        "type": "fire",
+        "energy": 8,
+        "power": 11,
+        "duration": 900
+    },
+    "bite": {
+        "type": "dark",
+        "energy": 4,
+        "power": 6,
+        "duration": 500
+    },
+    "scratch": {
+        "type": "normal",
+        "energy": 4,
+        "power": 6,
+        "duration": 500
+    },
+    "dragon breath": {
+        "type": "dragon",
+        "energy": 4,
+        "power": 6,
+        "duration": 500
+    },
+    "pound": {
+        "type": "normal",
+        "energy": 6,
+        "power": 7,
+        "duration": 600
+    },
+    "air slash": {
+        "type": "flying",
+        "energy": 10,
+        "power": 14,
+        "duration": 1200
+    },
+    "vine whip": {
+        "type": "grass",
+        "energy": 6,
+        "power": 7,
+        "duration": 600
+    },
+    "rock smash": {
+        "type": "fighting",
+        "energy": 10,
+        "power": 15,
+        "duration": 1300
+    },
+    "metal claw": {
+        "type": "steel",
+        "energy": 7,
+        "power": 8,
+        "duration": 700
+    },
+    "acid": {
+        "type": "poison",
+        "energy": 8,
+        "power": 9,
+        "duration": 800
+    },
+    "feint attack": {
+        "type": "dark",
+        "energy": 9,
+        "power": 10,
+        "duration": 900
+    },
+    "frost breath": {
+        "type": "ice",
+        "energy": 8,
+        "power": 10,
+        "duration": 900
+    },
+    "extrasensory": {
+        "type": "psychic",
+        "energy": 12,
+        "power": 12,
+        "duration": 1100
+    },
+    "zen headbutt": {
+        "type": "psychic",
+        "energy": 10,
+        "power": 12,
+        "duration": 1100
+    },
+    "snarl": {
+        "type": "dark",
+        "energy": 12,
+        "power": 12,
+        "duration": 1100
+    },
+    "mud slap": {
+        "type": "ground",
+        "energy": 12,
+        "power": 15,
+        "duration": 1400
+    },
+    "karate chop": {
+        "type": "fighting",
+        "energy": 10,
+        "power": 8,
+        "duration": 800
+    },
+    "low kick": {
+        "type": "fighting",
+        "energy": 6,
+        "power": 6,
+        "duration": 600
+    },
+    "bullet punch": {
+        "type": "steel",
+        "energy": 10,
+        "power": 9,
+        "duration": 900
+    },
+    "bubble": {
+        "type": "water",
+        "energy": 14,
+        "power": 12,
+        "duration": 1200
+    },
+    "water gun blastoise": {
+        "type": "water",
+        "energy": 6,
+        "power": 10,
+        "duration": 1000
+    },
+    "water gun": {
+        "type": "water",
+        "energy": 5,
+        "power": 5,
+        "duration": 500
+    },
+    "hidden power": {
+        "type": "normal",
+        "energy": 15,
+        "power": 15,
+        "duration": 1500
+    },
+    "sucker punch": {
+        "type": "dark",
+        "energy": 8,
+        "power": 7,
+        "duration": 700
+    },
+    "lick": {
+        "type": "ghost",
+        "energy": 6,
+        "power": 5,
+        "duration": 500
+    },
+    "cut": {
+        "type": "normal",
+        "energy": 5,
+        "power": 5,
+        "duration": 500
+    },
+    "tackle": {
+        "type": "normal",
+        "energy": 5,
+        "power": 5,
+        "duration": 500
+    },
+    "quick attack": {
+        "type": "normal",
+        "energy": 10,
+        "power": 8,
+        "duration": 800
+    },
+    "struggle bug": {
+        "type": "bug",
+        "energy": 15,
+        "power": 15,
+        "duration": 1500
+    },
+    "bug bite": {
+        "type": "bug",
+        "energy": 6,
+        "power": 5,
+        "duration": 500
+    },
+    "ember": {
+        "type": "fire",
+        "energy": 10,
+        "power": 10,
+        "duration": 1000
+    },
+    "peck": {
+        "type": "flying",
+        "energy": 10,
+        "power": 10,
+        "duration": 1000
+    },
+    "wing attack": {
+        "type": "flying",
+        "energy": 9,
+        "power": 8,
+        "duration": 800
+    },
+    "ice shard": {
+        "type": "ice",
+        "energy": 12,
+        "power": 12,
+        "duration": 1200
+    },
+    "infestation": {
+        "type": "bug",
+        "energy": 14,
+        "power": 10,
+        "duration": 1100
+    },
+    "volt switch": {
+        "type": "electric",
+        "energy": 25,
+        "power": 20,
+        "duration": 2300
+    },
+    "spark": {
+        "type": "electric",
+        "energy": 9,
+        "power": 6,
+        "duration": 700
+    },
+    "mud shot": {
+        "type": "ground",
+        "energy": 7,
+        "power": 5,
+        "duration": 600
+    },
+    "psycho cut": {
+        "type": "psychic",
+        "energy": 8,
+        "power": 5,
+        "duration": 600
+    },
+    "hex": {
+        "type": "ghost",
+        "energy": 15,
+        "power": 10,
+        "duration": 1200
+    },
+    "poison sting": {
+        "type": "poison",
+        "energy": 7,
+        "power": 5,
+        "duration": 600
+    },
+    "thunder shock": {
+        "type": "electric",
+        "energy": 8,
+        "power": 5,
+        "duration": 600
+    },
+    "fury cutter": {
+        "type": "bug",
+        "energy": 6,
+        "power": 3,
+        "duration": 400
+    },
+    "astonish": {
+        "type": "ghost",
+        "energy": 14,
+        "power": 8,
+        "duration": 1100
+    },
+    "charge beam": {
+        "type": "electric",
+        "energy": 15,
+        "power": 8,
+        "duration": 1100
+    },
+    "bullet seed": {
+        "type": "grass",
+        "energy": 14,
+        "power": 8,
+        "duration": 1100
+    },
+    "take down": {
+        "type": "normal",
+        "energy": 10,
+        "power": 8,
+        "duration": 1200
+    },
+    "powder snow": {
+        "type": "ice",
+        "energy": 15,
+        "power": 6,
+        "duration": 1000
+    },
+    "present": {
+        "type": "normal",
+        "energy": 20,
+        "power": 5,
+        "duration": 1300
+    },
+    "splash": {
+        "type": "water",
+        "energy": 20,
+        "power": 0,
+        "duration": 1730
+    },
+    "yawn": {
+        "type": "normal",
+        "energy": 15,
+        "power": 0,
+        "duration": 1700
+    },
+    "transform": {
+        "type": "normal",
+        "energy": 0,
+        "power": 0,
+        "duration": 2230
+    }
+}

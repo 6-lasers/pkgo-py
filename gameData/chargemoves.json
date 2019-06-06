@@ -1,0 +1,746 @@
+{
+    "precipice blades": {
+        "type": "ground",
+        "energy": -100,
+        "power": 130,
+        "duration": 1700
+    },
+    "origin pulse": {
+        "type": "water",
+        "energy": -100,
+        "power": 130,
+        "duration": 1700
+    },
+    "doom desire": {
+        "type": "steel",
+        "energy": -50,
+        "power": 80,
+        "duration": 1700
+    },
+    "brave bird": {
+        "type": "flying",
+        "energy": -100,
+        "power": 90,
+        "duration": 2000
+    },
+    "futuresight": {
+        "type": "psychic",
+        "energy": -100,
+        "power": 120,
+        "duration": 2700
+    },
+    "close combat": {
+        "type": "fighting",
+        "energy": -100,
+        "power": 100,
+        "duration": 2300
+    },
+    "stone edge": {
+        "type": "rock",
+        "energy": -100,
+        "power": 100,
+        "duration": 2300
+    },
+    "petal blizzard": {
+        "type": "grass",
+        "energy": -100,
+        "power": 110,
+        "duration": 2600
+    },
+    "blizzard": {
+        "type": "ice",
+        "energy": -100,
+        "power": 130,
+        "duration": 3100
+    },
+    "gunk shot": {
+        "type": "poison",
+        "energy": -100,
+        "power": 130,
+        "duration": 3100
+    },
+    "draco meteor": {
+        "type": "dragon",
+        "energy": -100,
+        "power": 150,
+        "duration": 3600
+    },
+    "thunder": {
+        "type": "electric",
+        "energy": -100,
+        "power": 100,
+        "duration": 2400
+    },
+    "megahorn": {
+        "type": "bug",
+        "energy": -100,
+        "power": 90,
+        "duration": 2200
+    },
+    "hurricane": {
+        "type": "flying",
+        "energy": -100,
+        "power": 110,
+        "duration": 2700
+    },
+    "focus blast": {
+        "type": "fighting",
+        "energy": -100,
+        "power": 140,
+        "duration": 3500
+    },
+    "overheat": {
+        "type": "fire",
+        "energy": -100,
+        "power": 160,
+        "duration": 4000
+    },
+    "hyper beam": {
+        "type": "normal",
+        "energy": -100,
+        "power": 150,
+        "duration": 3800
+    },
+    "hydro pump": {
+        "type": "water",
+        "energy": -100,
+        "power": 130,
+        "duration": 3300
+    },
+    "surf": {
+        "type": "water",
+        "energy": -50,
+        "power": 65,
+        "duration": 1700
+    },
+    "zap cannon": {
+        "type": "electric",
+        "energy": -100,
+        "power": 140,
+        "duration": 3700
+    },
+    "flash cannon": {
+        "type": "steel",
+        "energy": -100,
+        "power": 100,
+        "duration": 2700
+    },
+    "solar beam": {
+        "type": "grass",
+        "energy": -100,
+        "power": 180,
+        "duration": 4900
+    },
+    "psychic": {
+        "type": "psychic",
+        "energy": -100,
+        "power": 100,
+        "duration": 2800
+    },
+    "foul play": {
+        "type": "dark",
+        "energy": -50,
+        "power": 70,
+        "duration": 2000
+    },
+    "sky attack": {
+        "type": "flying",
+        "energy": -50,
+        "power": 70,
+        "duration": 2000
+    },
+    "sludge bomb": {
+        "type": "poison",
+        "energy": -50,
+        "power": 80,
+        "duration": 2300
+    },
+    "power whip": {
+        "type": "grass",
+        "energy": -50,
+        "power": 90,
+        "duration": 2600
+    },
+    "wild charge": {
+        "type": "electric",
+        "energy": -50,
+        "power": 90,
+        "duration": 2600
+    },
+    "grass knot": {
+        "type": "grass",
+        "energy": -50,
+        "power": 90,
+        "duration": 2600
+    },
+    "sludge wave": {
+        "type": "poison",
+        "energy": -100,
+        "power": 110,
+        "duration": 3200
+    },
+    "dynamic punch": {
+        "type": "fighting",
+        "energy": -50,
+        "power": 90,
+        "duration": 2700
+    },
+    "heavy slam": {
+        "type": "steel",
+        "energy": -50,
+        "power": 70,
+        "duration": 2100
+    },
+    "moonblast": {
+        "type": "fairy",
+        "energy": -100,
+        "power": 130,
+        "duration": 3900
+    },
+    "cross chop": {
+        "type": "fighting",
+        "energy": -50,
+        "power": 50,
+        "duration": 1500
+    },
+    "earthquake": {
+        "type": "ground",
+        "energy": -100,
+        "power": 120,
+        "duration": 3600
+    },
+    "shadow ball": {
+        "type": "ghost",
+        "energy": -50,
+        "power": 100,
+        "duration": 3000
+    },
+    "avalanche": {
+        "type": "ice",
+        "energy": -50,
+        "power": 90,
+        "duration": 2700
+    },
+    "fire blast": {
+        "type": "fire",
+        "energy": -100,
+        "power": 140,
+        "duration": 4200
+    },
+    "stomp": {
+        "type": "normal",
+        "energy": -50,
+        "power": 55,
+        "duration": 1700
+    },
+    "thunderbolt": {
+        "type": "electric",
+        "energy": -50,
+        "power": 80,
+        "duration": 2500
+    },
+    "hyper fang": {
+        "type": "normal",
+        "energy": -50,
+        "power": 80,
+        "duration": 2500
+    },
+    "flamethrower": {
+        "type": "fire",
+        "energy": -50,
+        "power": 70,
+        "duration": 2200
+    },
+    "heat wave": {
+        "type": "fire",
+        "energy": -100,
+        "power": 95,
+        "duration": 3000
+    },
+    "iron head": {
+        "type": "steel",
+        "energy": -50,
+        "power": 60,
+        "duration": 1900
+    },
+    "play rough": {
+        "type": "fairy",
+        "energy": -50,
+        "power": 90,
+        "duration": 2900
+    },
+    "rock slide": {
+        "type": "rock",
+        "energy": -50,
+        "power": 80,
+        "duration": 2700
+    },
+    "dragon claw": {
+        "type": "dragon",
+        "energy": -33,
+        "power": 50,
+        "duration": 1700
+    },
+    "leaf blade": {
+        "type": "grass",
+        "energy": -33,
+        "power": 70,
+        "duration": 2400
+    },
+    "dazzling gleam": {
+        "type": "fairy",
+        "energy": -50,
+        "power": 100,
+        "duration": 3500
+    },
+    "drill run": {
+        "type": "ground",
+        "energy": -50,
+        "power": 80,
+        "duration": 2800
+    },
+    "outrage": {
+        "type": "dragon",
+        "energy": -50,
+        "power": 110,
+        "duration": 3900
+    },
+    "x scissor": {
+        "type": "bug",
+        "energy": -33,
+        "power": 45,
+        "duration": 1600
+    },
+    "power gem": {
+        "type": "rock",
+        "energy": -50,
+        "power": 80,
+        "duration": 2900
+    },
+    "ice beam": {
+        "type": "ice",
+        "energy": -50,
+        "power": 90,
+        "duration": 3300
+    },
+    "submission": {
+        "type": "fighting",
+        "energy": -50,
+        "power": 60,
+        "duration": 2200
+    },
+    "flame burst": {
+        "type": "fire",
+        "energy": -50,
+        "power": 70,
+        "duration": 2600
+    },
+    "dark pulse": {
+        "type": "dark",
+        "energy": -50,
+        "power": 80,
+        "duration": 3000
+    },
+    "cross poison": {
+        "type": "poison",
+        "energy": -33,
+        "power": 40,
+        "duration": 1500
+    },
+    "ice punch": {
+        "type": "ice",
+        "energy": -33,
+        "power": 50,
+        "duration": 1900
+    },
+    "aqua tail": {
+        "type": "water",
+        "energy": -33,
+        "power": 50,
+        "duration": 1900
+    },
+    "rest": {
+        "type": "normal",
+        "energy": -33,
+        "power": 50,
+        "duration": 1900
+    },
+    "body slam": {
+        "type": "normal",
+        "energy": -33,
+        "power": 50,
+        "duration": 1900
+    },
+    "seed bomb": {
+        "type": "grass",
+        "energy": -33,
+        "power": 55,
+        "duration": 2100
+    },
+    "drill peck": {
+        "type": "flying",
+        "energy": -33,
+        "power": 60,
+        "duration": 2300
+    },
+    "brine": {
+        "type": "water",
+        "energy": -50,
+        "power": 60,
+        "duration": 2300
+    },
+    "discharge": {
+        "type": "electric",
+        "energy": -33,
+        "power": 65,
+        "duration": 2500
+    },
+    "signal beam": {
+        "type": "bug",
+        "energy": -50,
+        "power": 75,
+        "duration": 2900
+    },
+    "brick break": {
+        "type": "fighting",
+        "energy": -33,
+        "power": 40,
+        "duration": 1600
+    },
+    "magnet bomb": {
+        "type": "steel",
+        "energy": -33,
+        "power": 70,
+        "duration": 2800
+    },
+    "bone club": {
+        "type": "ground",
+        "energy": -33,
+        "power": 40,
+        "duration": 1600
+    },
+    "thunder punch": {
+        "type": "electric",
+        "energy": -33,
+        "power": 45,
+        "duration": 1800
+    },
+    "dragon pulse": {
+        "type": "dragon",
+        "energy": -50,
+        "power": 90,
+        "duration": 3600
+    },
+    "fire punch": {
+        "type": "fire",
+        "energy": -33,
+        "power": 55,
+        "duration": 2200
+    },
+    "bug buzz": {
+        "type": "bug",
+        "energy": -50,
+        "power": 90,
+        "duration": 3700
+    },
+    "gyro ball": {
+        "type": "steel",
+        "energy": -50,
+        "power": 80,
+        "duration": 3300
+    },
+    "psyshock": {
+        "type": "psychic",
+        "energy": -33,
+        "power": 65,
+        "duration": 2700
+    },
+    "mud bomb": {
+        "type": "ground",
+        "energy": -33,
+        "power": 55,
+        "duration": 2300
+    },
+    "sludge": {
+        "type": "poison",
+        "energy": -33,
+        "power": 50,
+        "duration": 2100
+    },
+    "rock blast": {
+        "type": "rock",
+        "energy": -33,
+        "power": 50,
+        "duration": 2100
+    },
+    "bubble beam": {
+        "type": "water",
+        "energy": -33,
+        "power": 45,
+        "duration": 1900
+    },
+    "shadow punch": {
+        "type": "ghost",
+        "energy": -33,
+        "power": 40,
+        "duration": 1700
+    },
+    "mirror coat": {
+        "type": "psychic",
+        "energy": -50,
+        "power": 60,
+        "duration": 2600
+    },
+    "draining kiss": {
+        "type": "fairy",
+        "energy": -50,
+        "power": 60,
+        "duration": 2600
+    },
+    "night shade": {
+        "type": "ghost",
+        "energy": -50,
+        "power": 60,
+        "duration": 2600
+    },
+    "energy ball": {
+        "type": "grass",
+        "energy": -50,
+        "power": 90,
+        "duration": 3900
+    },
+    "aerial ace": {
+        "type": "flying",
+        "energy": -33,
+        "power": 55,
+        "duration": 2400
+    },
+    "bulldoze": {
+        "type": "ground",
+        "energy": -50,
+        "power": 80,
+        "duration": 3500
+    },
+    "psystrike": {
+        "type": "psychic",
+        "energy": -50,
+        "power": 100,
+        "duration": 4400
+    },
+    "night slash": {
+        "type": "dark",
+        "energy": -33,
+        "power": 50,
+        "duration": 2200
+    },
+    "aurora beam": {
+        "type": "ice",
+        "energy": -50,
+        "power": 80,
+        "duration": 3550
+    },
+    "flame wheel": {
+        "type": "fire",
+        "energy": -50,
+        "power": 60,
+        "duration": 2700
+    },
+    "air cutter": {
+        "type": "flying",
+        "energy": -50,
+        "power": 60,
+        "duration": 2700
+    },
+    "rock tomb": {
+        "type": "rock",
+        "energy": -50,
+        "power": 70,
+        "duration": 3200
+    },
+    "crunch": {
+        "type": "dark",
+        "energy": -33,
+        "power": 70,
+        "duration": 3200
+    },
+    "psybeam": {
+        "type": "psychic",
+        "energy": -50,
+        "power": 70,
+        "duration": 3200
+    },
+    "water pulse": {
+        "type": "water",
+        "energy": -50,
+        "power": 70,
+        "duration": 3200
+    },
+    "ominous wind": {
+        "type": "ghost",
+        "energy": -33,
+        "power": 50,
+        "duration": 2300
+    },
+    "scald": {
+        "type": "water",
+        "energy": -50,
+        "power": 80,
+        "duration": 3700
+    },
+    "horn attack": {
+        "type": "normal",
+        "energy": -33,
+        "power": 40,
+        "duration": 1850
+    },
+    "swift": {
+        "type": "normal",
+        "energy": -50,
+        "power": 60,
+        "duration": 2800
+    },
+    "dig": {
+        "type": "ground",
+        "energy": -50,
+        "power": 100,
+        "duration": 4700
+    },
+    "low sweep": {
+        "type": "fighting",
+        "energy": -33,
+        "power": 40,
+        "duration": 1900
+    },
+    "heart stamp": {
+        "type": "psychic",
+        "energy": -33,
+        "power": 40,
+        "duration": 1900
+    },
+    "wrap": {
+        "type": "normal",
+        "energy": -33,
+        "power": 60,
+        "duration": 2900
+    },
+    "poison fang": {
+        "type": "poison",
+        "energy": -33,
+        "power": 35,
+        "duration": 1700
+    },
+    "ancient power": {
+        "type": "rock",
+        "energy": -33,
+        "power": 70,
+        "duration": 3500
+    },
+    "sand tomb": {
+        "type": "ground",
+        "energy": -50,
+        "power": 80,
+        "duration": 4000
+    },
+    "hydro pump blastoise": {
+        "type": "water",
+        "energy": -100,
+        "power": 90,
+        "duration": 4500
+    },
+    "silver wind": {
+        "type": "bug",
+        "energy": -33,
+        "power": 70,
+        "duration": 3700
+    },
+    "flame charge": {
+        "type": "fire",
+        "energy": -33,
+        "power": 70,
+        "duration": 3800
+    },
+    "vice grip": {
+        "type": "normal",
+        "energy": -33,
+        "power": 35,
+        "duration": 1900
+    },
+    "icy wind": {
+        "type": "ice",
+        "energy": -33,
+        "power": 60,
+        "duration": 3300
+    },
+    "disarming voice": {
+        "type": "fairy",
+        "energy": -33,
+        "power": 70,
+        "duration": 3900
+    },
+    "psycho boost": {
+        "type": "psychic",
+        "energy": -50,
+        "power": 70,
+        "duration": 4000
+    },
+    "aqua jet": {
+        "type": "water",
+        "energy": -33,
+        "power": 45,
+        "duration": 2600
+    },
+    "shadow sneak": {
+        "type": "ghost",
+        "energy": -33,
+        "power": 50,
+        "duration": 2900
+    },
+    "twister": {
+        "type": "dragon",
+        "energy": -33,
+        "power": 45,
+        "duration": 2800
+    },
+    "struggle": {
+        "type": "normal",
+        "energy": 0,
+        "power": 35,
+        "duration": 2200
+    },
+    "giga drain": {
+        "type": "grass",
+        "energy": -100,
+        "power": 50,
+        "duration": 3900
+    },
+    "scald blastoise": {
+        "type": "water",
+        "energy": -100,
+        "power": 50,
+        "duration": 4700
+    },
+    "mega drain": {
+        "type": "grass",
+        "energy": -50,
+        "power": 25,
+        "duration": 2600
+    },
+    "parabolic charge": {
+        "type": "electric",
+        "energy": -50,
+        "power": 25,
+        "duration": 2800
+    },
+    "wrap pink": {
+        "type": "normal",
+        "energy": -33,
+        "power": 25,
+        "duration": 2900
+    },
+    "wrap green": {
+        "type": "normal",
+        "energy": -33,
+        "power": 25,
+        "duration": 2900
+    }
+}

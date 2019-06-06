@@ -22,14 +22,21 @@ import pkgo_data
 # Max IV is 15
 maxIV = 15
 
+def calcCpm(lvl):
+    if lvl.is_integer():
+        return pkgo_data.levelToCpm['cpMultiplier'][int(lvl) - 1]
+    else:
+        #return math.sqrt((math.pow(pkgo_data.levelToCpm[str(math.floor(lvl))], 2) + math.pow(pkgo_data.levelToCpm[str(math.ceil(lvl))], 2)) / 2);
+        return math.sqrt((math.pow(pkgo_data.levelToCpm['cpMultiplier'][int(math.floor(lvl)) - 1], 2) + math.pow(pkgo_data.levelToCpm['cpMultiplier'][int(math.ceil(lvl)) - 1], 2)) / 2);
+
 # Calculate CP
 def calcCPBackend(sta, atk, defe, cpm, verbose=False):
     if verbose:
         print atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10
-    return int(max(10, math.floor(round(atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10, 3))))
+    return int(max(10, math.floor(atk * math.pow(defe, 0.5) * math.pow(sta, 0.5) * math.pow(cpm, 2) / 10)))
 
 def calcCP(sta, atk, defe, lvl, verbose=False):
-    cpm = pkgo_data.levelToCpm[str(lvl)]
+    cpm = calcCpm(lvl)
     return calcCPBackend(sta, atk, defe, cpm, verbose)
 
 def calcCPForPKMN(pk, verbose=False):
@@ -38,7 +45,7 @@ def calcCPForPKMN(pk, verbose=False):
 
 # Calculate HP
 def calcHP(sta, lvl):
-    cpm = pkgo_data.levelToCpm[str(lvl)]
+    cpm = calcCpm(lvl)
     return int(max(10, math.floor(cpm * sta)))
 
 def calcHPForPKMN(pk):
@@ -47,7 +54,7 @@ def calcHPForPKMN(pk):
 
 # Calculate ATK or DEF
 def calcATK(atk, lvl):
-    cpm = pkgo_data.levelToCpm[str(lvl)]
+    cpm = calcCpm(lvl)
     return int(math.floor(cpm * atk))
 
 def calcATKForPKMN(pk):
@@ -55,7 +62,7 @@ def calcATKForPKMN(pk):
     return calcHP(baseatk + pk['ivatk'], pk['level'])
 
 def calcDEF(defe, lvl):
-    cpm = pkgo_data.levelToCpm[str(lvl)]
+    cpm = calcCpm(lvl)
     return int(math.floor(cpm * defe))
 
 def calcDEFForPKMN(pk):
@@ -86,6 +93,40 @@ def PKMNFromStr(str):
     return pk
 
 def PKMNToStr(pk):
-    ivsum = pk['ivsta'] + pk['ivatk'] + pk['ivdef']
-    return "Level {0} {1}, IVs STA {2:2}, ATK {3:2}, DEF {4:2}, total {5:2} ({6:.1%}) ({2:x}{3:x}{4:x})".format(pk['level'], pk['spec'].capitalize(), pk['ivsta'], pk['ivatk'], pk['ivdef'], ivsum, ivsum / 45.0)
+    if pk['ivsta'] != None and pk['ivatk'] != None and pk['ivdef'] != None:
+        ivsum = pk['ivsta'] + pk['ivatk'] + pk['ivdef']
+        return "Level {0} {1}, IVs STA {2:2}, ATK {3:2}, DEF {4:2}, total {5:2} ({6:.1%}) ({2:x}{3:x}{4:x})".format(pk['level'], pk['spec'].capitalize(), pk['ivsta'], pk['ivatk'], pk['ivdef'], ivsum, ivsum / 45.0)
+    else:
+        return "Level {0} {1}, IVs unknown!".format(pk['level'], pk['spec'].capitalize())
+
+def exportMonToPokebattler(pk, f):
+    fields = []
+    # pokemon
+    fields.append(pk['spec'].upper())
+    # name
+    fields.append("")
+    # cp
+    fields.append(str(calcCPForPKMN(pk)))
+    # level
+    fields.append(str(pk['level']))
+    # individualAttack
+    fields.append(str(pk['ivatk']))
+    # individualDefense
+    fields.append(str(pk['ivdef']))
+    # individualStamina
+    fields.append(str(pk['ivsta']))
+    # quickMove
+    fields.append("Dragon tail")
+    # cinematicMove
+    fields.append("outrage")
+    # shiny
+    fields.append("FALSE")
+    # lucky
+    fields.append("FALSE")
+    f.write(",".join(fields) + "\n")
+
+def exportMonsToPokebattler(pks, f):
+    f.write("pokemon,nickname,cp,level,AttackIV,DEFIV,HPIV,fastmove,specialmove,shiny,lucky\n")
+    for pk in pks:
+        exportMonToPokebattler(pk, f)
 

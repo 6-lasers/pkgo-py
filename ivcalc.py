@@ -13,7 +13,7 @@ from __future__ import print_function
 
 import os
 import sys
-import optparse
+import argparse
 import json
 
 import pkgo_data
@@ -26,20 +26,15 @@ import pkgo_appraise
 dataDir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "gameData")
 
 def main(argv=None):
-    usage="Usage: ivcalc.py <input.txt>"
-    parser = optparse.OptionParser(usage=usage)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("inputFile", help="text file containing IV information")
+    parser.add_argument("--formula", metavar="<formula>", default="", help="Select stat formula")
     
-    (options, args) = parser.parse_args()
+    args = parser.parse_args()
     
-    # Get arguments
-    try:
-        inputFileName, = args
-    except ValueError:
-        print("ERROR: Invalid number of arguments")
-        print(usage)
-        return 1
+    inputFileName = args.inputFile
     
-    baseStatsName = os.path.join(dataDir, "baseStats.json")
+    baseStatsName = os.path.join(dataDir, "baseStats" + args.formula + ".json")
     dustJsonName = os.path.join(dataDir, "dust-to-level.json")
     levelToCpmName = os.path.join(dataDir, "level-to-cpm.json")
     
@@ -73,7 +68,7 @@ def main(argv=None):
         print("PKMN {0} ({1} CP {2}):".format(cnt, appr['spec'], appr['cp']))
         pkarr = pkgo_appraise.matchApprIVs(appr)
         for pk in pkarr:
-            pkgo_pkmn.calcCPForPKMN(pk)
+            pkgo_pkmn.calcCPForPKMN(pk, True)
             print("Possible match: {0}".format(pkgo_pkmn.PKMNToStr(pk)))
         
         cnt += 1

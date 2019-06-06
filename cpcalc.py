@@ -13,7 +13,7 @@ from __future__ import print_function
 
 import os
 import sys
-import optparse
+import argparse
 import json
 
 import pkgo_data
@@ -26,18 +26,13 @@ import pkgo_appraise
 dataDir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "gameData")
 
 def main(argv=None):
-    usage="Usage: cpcalc.py <input.txt>"
-    parser = optparse.OptionParser(usage=usage)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("file", help="text file containing CP information")
+    parser.add_argument("--power", action="store_true", help="find power up needed to narrow")
     
-    (options, args) = parser.parse_args()
+    args = parser.parse_args()
     
-    # Get arguments
-    try:
-        inputFileName, = args
-    except ValueError:
-        print("ERROR: Invalid number of arguments")
-        print(usage)
-        return 1
+    inputFileName = args.file
     
     baseStatsName = os.path.join(dataDir, "baseStats.json")
     dustJsonName = os.path.join(dataDir, "dust-to-level.json")
@@ -64,6 +59,8 @@ def main(argv=None):
     lines = inputFile.readlines()
     inputFile.close()
     
+    pks = []
+    
     cnt = 1
     for line in lines:
         # Skip empty lines, comments
@@ -75,7 +72,7 @@ def main(argv=None):
         
         start_lvl = None
         
-        print line.split()
+        #print(line.split())
         pk = pkgo_pkmn.PKMNFromStr(line)
         # try:
             # pk = pkgo_pkmn.PKMNFromStr(line)
@@ -84,11 +81,12 @@ def main(argv=None):
             # pk = pkgo_pkmn.PKMNFromStr(" ".join(splitline[:-1]))
             # start_lvl = splitline[-1]
         
-        pk['cp'] = pkgo_pkmn.calcCPForPKMN(pk)
+        pk['cp'] = pkgo_pkmn.calcCPForPKMN(pk, True)
         pk['hp'] = pkgo_pkmn.calcHPForPKMN(pk)
         
         # Check IVs for each appraisal
         print("PKMN {0} (Lvl. {1} {2} CP {3} HP {4})".format(cnt, pk['level'], pk['spec'], pk['cp'], pk['hp']))
+        print("(ATK {0} DEF {1})".format(pkgo_pkmn.calcATKForPKMN(pk), pkgo_pkmn.calcDEFForPKMN(pk)))
         if start_lvl:
             dustCost = 0
             candyCost = 0
@@ -107,7 +105,46 @@ def main(argv=None):
             print("To level from {0} to {1}, you need:".format(start_lvl, pk['level']))
             print("{0} dust and {1} candies.".format(dustCost, candyCost))
         
+        pks.append(pk)
         cnt += 1
+    
+    if args.power:
+        locked_pks = []
+        while True:
+            seen = set()
+            if not any((pk['hp'], pk['cp']) in seen or seen.add((pk['hp'], pk['cp'])) for pk in pks):
+                break
+            for pk in pks:
+                pk['level'] += 0.5
+                pk['cp'] = pkgo_pkmn.calcCPForPKMN(pk)
+                pk['hp'] = pkgo_pkmn.calcHPForPKMN(pk)
+        """
+        while True:
+            first = pks[0]
+            if not all(first['cp'] == pk['cp'] and first['hp'] == pk['hp'] for pk in pks):
+                break
+            for pk in pks:
+                pk['level'] += 0.5
+                pk['cp'] = pkgo_pkmn.calcCPForPKMN(pk)
+                pk['hp'] = pkgo_pkmn.calcHPForPKMN(pk)
+        
+        print("First unique")
+        for pk in pks:
+            print("PKMN {0} (Lvl. {1} {2} CP {3} HP {4})".format(cnt, pk['level'], pk['spec'], pk['cp'], pk['hp']))
+        
+        while True:
+            seen = set()
+            if not any((pk['hp'], pk['cp']) in seen or seen.add((pk['hp'], pk['cp'])) for pk in pks):
+                break
+            for pk in pks:
+                pk['level'] += 0.5
+                pk['cp'] = pkgo_pkmn.calcCPForPKMN(pk)
+                pk['hp'] = pkgo_pkmn.calcHPForPKMN(pk)
+        
+        print("All unique")
+        for pk in pks:
+            print("PKMN {0} (Lvl. {1} {2} CP {3} HP {4})".format(cnt, pk['level'], pk['spec'], pk['cp'], pk['hp']))
+        """
     
     return 0
 

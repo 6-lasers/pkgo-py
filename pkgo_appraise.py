@@ -129,26 +129,35 @@ def lineToAppr(line):
     # 'gmin/gmax' refer to the Pokemon's overall quality in appraisal ("is a wonder!")
     # 'hmin/hmax' refer to the 'best attribute' mentioned in appraisal ("stats exceed my calculations")
     if gapp and happ:
-        appr['gmin'] = gappToMin[int(gapp)]
-        appr['gmax'] = gappToMin[int(gapp) + 1]
-        appr['hmin'] = happToMin[int(happ)]
-        appr['hmax'] = happToMin[int(happ) + 1]
+        if gapp == "?" or happ == "?":
+            appr['gmin'] = 0
+            appr['gmax'] = 46
+            appr['hmin'] = 0
+            appr['hmax'] = 16
+            appr['high'] = None
+        else:
+            appr['gmin'] = gappToMin[int(gapp)]
+            appr['gmax'] = gappToMin[int(gapp) + 1]
+            appr['hmin'] = happToMin[int(happ)]
+            appr['hmax'] = happToMin[int(happ) + 1]
     else:
         appr['hp'] = None
         appr['high'] = None
-        if raid:
+        if "raid" in raid:
             appr['gmin'] = 30
             appr['gmax'] = 45
             appr['hmin'] = 10
             appr['hmax'] = 15
-
+            
             flags = "h"
+            if "w" in raid:
+                flags += "w"
         else:
             appr['gmin'] = 0
             appr['gmax'] = 45
             appr['hmin'] = 0
             appr['hmax'] = 15
-            appr['levels'] = []
+            appr['levels'] = [1.0 + (0.5 * i) for i in range(79)]
     
     # By default, IVs can be as low as 0
     appr['imin'] = 0
@@ -158,6 +167,9 @@ def lineToAppr(line):
         # and not powered up, level is 20
         if 'p' not in flags:
             appr['levels'] = [20.0]
+            # Unless weather boosted, then it's 25
+            if 'w' in flags:
+                appr['levels'] = [25.0]
         # Hatched IVs cannot be lower than 10
         appr['hmin'] = max(10, appr['hmin'])
         appr['imin'] = 10
