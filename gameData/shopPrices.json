@@ -1,0 +1,55 @@
+{
+    "incubator" : {
+        "full" : 150,
+        "sale" : 150
+    },
+    "super incubator" : {
+        "full" : 200,
+        "sale" : 150
+    },
+    "pass" : {
+        "name" : "premium raid pass",
+        "full" : 100,
+        "sale" : 100
+    },
+    "max revive" : {
+        "full" : 30,
+        "sale" : 0
+    },
+    "egg" : {
+        "name" : "lucky egg",
+        "full" : 80,
+        "sale" : 50
+    },
+    "lure" : {
+        "name" : "lure module",
+        "full" : 100,
+        "sale" : 0
+    },
+    "max potion" : {
+        "full" : 20,
+        "sale" : 0
+    },
+    "incense" : {
+        "full" : 80,
+        "sale" : 0
+    },
+    "star piece" : {
+        "full" : 50,
+        "sale" : 50
+    },
+    "razz" : {
+        "name" : "razz berry",
+        "full" : 0,
+        "sale" : 0
+    },
+    "pinap" : {
+        "name" : "pinap berry",
+        "full" : 0,
+        "sale" : 0
+    },
+    "ultra ball" : {
+        "full" : 0,
+        "sale" : 0
+    }
+}
