@@ -27,12 +27,11 @@ dataDir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "gameData")
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("file", help="text file containing CP information")
+    parser.add_argument("file", help="text file containing Pokemon information")
     parser.add_argument("--power", action="store_true", help="find power up needed to narrow")
+    parser.add_argument("--boost", nargs=2, metavar=("<boosted stats (h, a, d)>", "<boost amount (-4 to +4)>"), help="Calculate PvP stat boost")
     
     args = parser.parse_args()
-    
-    inputFileName = args.file
     
     baseStatsName = os.path.join(dataDir, "baseStats.json")
     dustJsonName = os.path.join(dataDir, "dust-to-level.json")
@@ -55,7 +54,7 @@ def main(argv=None):
     candyJson = json.load(candyJsonFile)
     candyJsonFile.close()
     
-    inputFile = open(inputFileName, "r")
+    inputFile = open(args.file, "r")
     lines = inputFile.readlines()
     inputFile.close()
     
@@ -72,7 +71,6 @@ def main(argv=None):
         
         start_lvl = None
         
-        #print(line.split())
         pk = pkgo_pkmn.PKMNFromStr(line)
         # try:
             # pk = pkgo_pkmn.PKMNFromStr(line)
@@ -80,6 +78,15 @@ def main(argv=None):
             # splitline = line.split()
             # pk = pkgo_pkmn.PKMNFromStr(" ".join(splitline[:-1]))
             # start_lvl = splitline[-1]
+        
+        if args.boost:
+            mult = float(args.boost[1]) / 4
+            if 'h' in args.boost[0]:
+                pk['ivsta'] += round((pkgo_data.baseStats[pk['spec'].lower()][0] + pk['ivsta']) * mult)
+            if 'a' in args.boost[0]:
+                pk['ivatk'] += round((pkgo_data.baseStats[pk['spec'].lower()][1] + pk['ivatk']) * mult)
+            if 'd' in args.boost[0]:
+                pk['ivdef'] += round((pkgo_data.baseStats[pk['spec'].lower()][2] + pk['ivdef']) * mult)
         
         pk['cp'] = pkgo_pkmn.calcCPForPKMN(pk, True)
         pk['hp'] = pkgo_pkmn.calcHPForPKMN(pk)
